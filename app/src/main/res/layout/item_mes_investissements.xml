@@ -1,0 +1,44 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="8dp"
+    android:layout_margin="14dp">
+
+    <TextView
+        android:id="@+id/investisseur"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Investisseur"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/projet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Projet"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/montant"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Montant investi"
+        android:textSize="14sp" />
+
+    <Button
+        android:id="@+id/button_reduce_investment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Réduire"
+        android:layout_marginTop="8dp" />
+
+    <!-- Bouton pour supprimer l'investissement -->
+    <Button
+        android:id="@+id/button_delete_investment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Supprimer"
+        android:layout_marginTop="4dp" />
+</LinearLayout>

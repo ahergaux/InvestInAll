@@ -1,0 +1,98 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="@color/background_color">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:background="@drawable/detail_background"
+        android:elevation="4dp"
+        android:layout_margin="8dp">
+
+        <!-- Nom du projet -->
+        <TextView
+            android:id="@+id/detail_nom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Nom du projet"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:paddingBottom="16dp" />
+
+        <!-- Créateur du projet -->
+        <TextView
+            android:id="@+id/detail_createur"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Créé par :"
+            android:textSize="16sp"
+            android:paddingBottom="8dp" />
+
+        <!-- Rendement -->
+        <TextView
+            android:id="@+id/detail_rendement_label"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Rendement attendu :"
+            android:textSize="16sp" />
+
+
+        <!-- Date du prochain dividende -->
+        <TextView
+            android:id="@+id/detail_dividende_date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Date du prochain dividende :"
+            android:textSize="16sp"
+            android:paddingBottom="8dp" />
+
+        <!-- Récurrence des dividendes -->
+        <TextView
+            android:id="@+id/detail_dividende_recurrence"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Récurrence des dividendes :"
+            android:textSize="16sp"
+            android:paddingBottom="8dp" />
+
+
+        <!-- Solde actuel -->
+        <TextView
+            android:id="@+id/detail_solde"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Solde actuel :"
+            android:textSize="16sp" />
+
+        <ProgressBar
+            android:id="@+id/detail_but_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:progressDrawable="@drawable/progress_bar_style"
+            android:max="100"
+            android:progress="0"
+            android:layout_marginBottom="16dp" />
+
+        <EditText
+            android:id="@+id/investment_amount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Montant à investir"
+            android:inputType="numberDecimal"
+            android:layout_marginTop="16dp" />
+
+        <!-- Bouton pour investir -->
+        <Button
+            android:id="@+id/button_invest"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Investir"
+            android:layout_marginTop="8dp" />
+
+    </LinearLayout>
+</ScrollView>

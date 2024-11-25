@@ -1,0 +1,41 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <EditText
+        android:id="@+id/project_name_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nom du Projet"
+        android:inputType="text" />
+
+    <EditText
+        android:id="@+id/project_goal_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="But à atteindre (€)"
+        android:inputType="numberDecimal" />
+
+    <EditText
+        android:id="@+id/project_rendement_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Rendement (%)"
+        android:inputType="numberDecimal" />
+
+    <EditText
+        android:id="@+id/project_dividend_date_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Date de Dividende (jours)"
+        android:inputType="number" />
+
+    <EditText
+        android:id="@+id/project_dividend_recurrence_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Récurrence des Dividendes (jours)"
+        android:inputType="number" />
+</LinearLayout>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nav_account"
+        android:icon="@drawable/ic_account"
+        android:title="Account" />
+    <item
+        android:id='@+id/nav_mes_investissements'
+        android:icon="@drawable/ic_mesinvestissements"
+        android:title="Mes Investissements" />
+    <item
+        android:id="@+id/nav_search"
+        android:icon="@drawable/ic_search"
+        android:title="Recherche" />
+    <item
+        android:id="@+id/nav_help"
+        android:icon="@drawable/ic_help"
+        android:title="Contact" />
+    <item
+        android:id="@+id/nav_mes_projets"
+        android:icon="@drawable/ic_mes_projets"
+        android:title="Mes Projets" />
+
+
+</menu>
