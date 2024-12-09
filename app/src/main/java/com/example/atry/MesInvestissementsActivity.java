@@ -12,7 +12,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
 
-// MesInvestissementsActivity.java
 
 public class MesInvestissementsActivity extends AppCompatActivity implements MesInvestissementsAdapter.OnInvestmentActionListener {
 
@@ -40,13 +39,11 @@ public class MesInvestissementsActivity extends AppCompatActivity implements Mes
 
     @Override
     public void onReduceInvestment(aInvestit investissement) {
-        // Afficher une boîte de dialogue pour saisir le nouveau montant
         showReduceInvestmentDialog(investissement);
     }
 
     @Override
     public void onDeleteInvestment(aInvestit investissement) {
-        // Confirmer la suppression
         new AlertDialog.Builder(this)
                 .setTitle("Supprimer l'investissement")
                 .setMessage("Êtes-vous sûr de vouloir supprimer cet investissement ?")
@@ -85,19 +82,15 @@ public class MesInvestissementsActivity extends AppCompatActivity implements Mes
 
             double difference = investissement.getSoldeInvestit() - newAmount;
 
-            // Mettre à jour le solde de l'utilisateur
             compte.setSolde(compte.getSolde() + difference);
 
-            // Mettre à jour le montant investi
             investissement.setSoldeInvestit(newAmount);
 
-            // Mettre à jour la base de données
             dbHelper.updateAInvestit(investissement.getId(),
                     investissement.getInvestisseur().getPersonne().getNom(),
                     investissement.getInvestisseur().getPersonne().getPrenom(),
                     newAmount);
 
-            // Rafraîchir l'affichage
             adapter.notifyDataSetChanged();
             Toast.makeText(this, "Investissement mis à jour.", Toast.LENGTH_SHORT).show();
         });
@@ -108,17 +101,13 @@ public class MesInvestissementsActivity extends AppCompatActivity implements Mes
     }
 
     private void deleteInvestment(aInvestit investissement) {
-        // Mettre à jour le solde de l'utilisateur
         double amount = investissement.getSoldeInvestit();
         compte.setSolde(compte.getSolde() + amount);
 
-        // Supprimer l'investissement des investissements de l'utilisateur
         compte.removeToMesInvestissement(investissement.getInvestissement());
 
-        // Supprimer de la base de données
         dbHelper.deleteAInvestit(investissement.getId());
 
-        // Mettre à jour l'affichage
         mesinvestissements.remove(investissement);
         adapter.notifyDataSetChanged();
 

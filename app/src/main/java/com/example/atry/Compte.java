@@ -11,19 +11,18 @@ public class Compte {
     private long id;
     private final Personne personne;
     private final String alias;
-    private ArrayList<Investissement> mesProjets = new ArrayList<>();
-    private ArrayList<aInvestit> mesinvestissements = new ArrayList<>();
+    private final ArrayList<Investissement> mesProjets = new ArrayList<>();
+    private final ArrayList<aInvestit> mesinvestissements = new ArrayList<>();
     private double solde;
-    private String currency;
+    private final String currency;
 
-    private final DatabaseHelper dbHelper; // Instance de la base de données
-
+    private final DatabaseHelper dbHelper;
     public Compte(Context context, Personne personne, String alias, String currency) {
         this.personne = personne;
         this.alias = alias;
         this.currency = currency;
         this.solde = 0;
-        this.dbHelper = new DatabaseHelper(context); // Initialiser la base de données
+        this.dbHelper = new DatabaseHelper(context);
     }
 
     public String getAlias() {
@@ -78,8 +77,6 @@ public class Compte {
         projet.setId(id);
     }
 
-
-
     public void removeProjet(Investissement projet) {
         mesProjets.remove(projet);
         dbHelper.deleteInvestissement(projet.getId());
@@ -96,7 +93,7 @@ public class Compte {
                 newInvestissement.getId(),
                 investit
         );
-        nouveau.setId(id); // Définir l'ID généré
+        nouveau.setId(id);
     }
 
     public void removeToMesInvestissement(Investissement rmInvestissement) {

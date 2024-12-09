@@ -12,10 +12,8 @@ import java.util.List;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
 
-    // Nom de la base de données
     private static final String DATABASE_NAME = "investment.db";
 
-    // Version de la base de données
     private static final int DATABASE_VERSION = 4;
 
     // Table Compte
@@ -50,7 +48,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private static final String COLUMN_AINVESTIT_INVESTISSEMENT_ID = "investissement_id";
     private static final String COLUMN_AINVESTIT_MONTANT = "montant_investit";
 
-    // Constructeur
     public DatabaseHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
@@ -116,7 +113,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
 
-    // Mettre à jour un compte
     public int updateCompte(long id, String alias, double solde, String currency, String iban) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
@@ -127,7 +123,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return db.update(TABLE_COMPTE, values, COLUMN_COMPTE_ID + "=?", new String[]{String.valueOf(id)});
     }
 
-    // Mettre à jour un investissement
     public int updateInvestissement(long id, String nom, double rendement, int dividendeDate, int dividendeRecurrence, double but, double solde) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
@@ -140,7 +135,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return db.update(TABLE_INVESTISSEMENT, values, COLUMN_INVESTISSEMENT_ID + "=?", new String[]{String.valueOf(id)});
     }
 
-    // Mettre à jour un investissement effectué par un investisseur
     public int updateAInvestit(long id, String nom, String prenom, double montant) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
@@ -150,7 +144,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return db.update(TABLE_AINVESTIT, values, COLUMN_AINVESTIT_ID + "=?", new String[]{String.valueOf(id)});
     }
 
-    // Récupérer un compte
     public Compte getCompte(Context context) {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.query(TABLE_COMPTE, null, null, null, null, null, null);
@@ -220,10 +213,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             double solde = cursor.getDouble(cursor.getColumnIndexOrThrow(COLUMN_INVESTISSEMENT_SOLDE));
             String createurAlias = cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_INVESTISSEMENT_CREATEUR_ALIAS));
 
-            // Récupérer le compte associé
             Compte compte = CompteManager.getCompte();
 
-            // Créer l'objet Investissement
             Investissement investissement = new Investissement(context, createurAlias, nom, rendement, dividendeDate, dividendeRecurrence, but);
             investissement.setId(id);
             investissement.setSolde(solde);
@@ -258,7 +249,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             long investissementId = cursor.getLong(cursor.getColumnIndexOrThrow(COLUMN_AINVESTIT_INVESTISSEMENT_ID));
             double montant = cursor.getDouble(cursor.getColumnIndexOrThrow(COLUMN_AINVESTIT_MONTANT));
 
-            // Récupérer l'investissement associé
             Investissement investissement = getInvestissementById(context, investissementId);
 
             Compte investisseur = CompteManager.getCompte();
@@ -272,7 +262,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return aInvestits;
     }
 
-    // Récupérer les investissements effectués par un investisseur
     public List<aInvestit> getAInvestit(Context context ,long investissementId) {
         List<aInvestit> aInvestits = new ArrayList<>();
         SQLiteDatabase db = this.getReadableDatabase();
@@ -284,7 +273,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             String prenom = cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_AINVESTIT_PRENOM));
             double montant = cursor.getDouble(cursor.getColumnIndexOrThrow(COLUMN_AINVESTIT_MONTANT));
 
-            // Passez le context à la création de Compte
             Compte investisseur = new Compte(context, new Personne(nom, prenom, 0, "Nationalité"), "", ""); // Utilisation du context ici
             aInvestit investit = new aInvestit(investisseur, null, montant);
             aInvestits.add(investit);
@@ -325,12 +313,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(COLUMN_AINVESTIT_MONTANT, montant);
         return db.insert(TABLE_AINVESTIT, null, values);
     }
-
-
-
-    // Dans DatabaseHelper.java
-
-// Dans DatabaseHelper.java
 
     public long insertCompte(String alias, double solde, String currency, String iban, String nom, String prenom, long dateNaissance, String nationalite) {
         SQLiteDatabase db = this.getWritableDatabase();

@@ -13,7 +13,7 @@ import java.util.List;
 
 public class InvestissementAdapter extends RecyclerView.Adapter<InvestissementAdapter.ViewHolder> {
     private List<Investissement> investissements;
-    private OnItemClickListener listener;
+    private final OnItemClickListener listener;
 
     public InvestissementAdapter(List<Investissement> investissements, OnItemClickListener listener) {
         this.investissements = investissements;

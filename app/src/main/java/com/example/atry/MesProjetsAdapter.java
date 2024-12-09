@@ -17,8 +17,8 @@ public class MesProjetsAdapter extends RecyclerView.Adapter<MesProjetsAdapter.Vi
         void onDeleteClick(int position);
     }
 
-    private List<Investissement> mesProjets;
-    private OnProjectClickListener listener;
+    private final List<Investissement> mesProjets;
+    private final OnProjectClickListener listener;
 
     public MesProjetsAdapter(List<Investissement> mesProjets, OnProjectClickListener listener) {
         this.mesProjets = mesProjets;
@@ -52,7 +52,6 @@ public class MesProjetsAdapter extends RecyclerView.Adapter<MesProjetsAdapter.Vi
         return mesProjets.size();
     }
 
-    // Définition de la classe ViewHolder
     public static class ViewHolder extends RecyclerView.ViewHolder {
         TextView projectName, projectGoal;
         Button deleteButton;

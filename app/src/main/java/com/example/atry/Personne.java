@@ -4,7 +4,7 @@ public class Personne {
 
     private final String nom;
     private final String prenom;
-    private final long dateNaissance; // Modifier en long pour le timestamp
+    private final long dateNaissance;
     private final String nationalite;
     private String iban;
 
@@ -15,7 +15,6 @@ public class Personne {
         this.nationalite = nationalite;
     }
 
-    // Getters et setters
 
     public String getNom() {
         return nom;

@@ -9,7 +9,6 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <!-- Affichage du nom complet -->
         <TextView
             android:id="@+id/account_full_name"
             android:layout_width="match_parent"
@@ -18,35 +17,30 @@
             android:textSize="18sp"
             android:textStyle="bold" />
 
-        <!-- Alias -->
         <TextView
             android:id="@+id/account_alias"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Alias" />
 
-        <!-- Date de naissance -->
         <TextView
             android:id="@+id/account_date_naissance"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Date de naissance" />
 
-        <!-- Nationalité -->
         <TextView
             android:id="@+id/account_nationalite"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Nationalité" />
 
-        <!-- IBAN -->
         <TextView
             android:id="@+id/account_iban"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="IBAN" />
 
-        <!-- Devise -->
         <TextView
             android:id="@+id/account_currency"
             android:layout_width="match_parent"
@@ -62,7 +56,6 @@
             android:textStyle="bold"
             android:paddingTop="16dp" />
 
-        <!-- Champ pour le montant à ajouter -->
         <EditText
             android:id="@+id/add_amount"
             android:layout_width="match_parent"
@@ -71,7 +64,6 @@
             android:inputType="numberDecimal"
             android:layout_marginTop="16dp" />
 
-        <!-- Bouton pour ajouter des fonds -->
         <Button
             android:id="@+id/button_add_funds"
             android:layout_width="match_parent"
@@ -79,7 +71,6 @@
             android:text="Ajouter des fonds"
             android:layout_marginTop="8dp" />
 
-        <!-- Champ pour le montant à retirer -->
         <EditText
             android:id="@+id/withdraw_amount"
             android:layout_width="match_parent"
@@ -88,7 +79,6 @@
             android:inputType="numberDecimal"
             android:layout_marginTop="16dp" />
 
-        <!-- Bouton pour retirer des fonds -->
         <Button
             android:id="@+id/button_withdraw_funds"
             android:layout_width="match_parent"

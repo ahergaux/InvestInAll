@@ -9,7 +9,6 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-// InvestissementDetailActivity.java
 
 public class InvestissementDetailActivity extends AppCompatActivity {
 
@@ -28,8 +27,6 @@ public class InvestissementDetailActivity extends AppCompatActivity {
 
         dbHelper = new DatabaseHelper(this);
         compte = CompteManager.getCompte();
-
-        // Récupérer les vues
         detailNom = findViewById(R.id.detail_nom);
         detailCreateur = findViewById(R.id.detail_createur);
         detailDividendeDate = findViewById(R.id.detail_dividende_date);
@@ -39,13 +36,10 @@ public class InvestissementDetailActivity extends AppCompatActivity {
         investmentAmountEditText = findViewById(R.id.investment_amount);
         investButton = findViewById(R.id.button_invest);
 
-        // Récupérer les données de l'investissement
         investissement = getInvestissementFromIntent();
 
-        // Afficher les détails de l'investissement
         displayInvestmentDetails();
 
-        // Configurer le listener du bouton d'investissement
         investButton.setOnClickListener(v -> handleInvestment());
     }
 
@@ -87,11 +81,9 @@ public class InvestissementDetailActivity extends AppCompatActivity {
             return;
         }
 
-        // Procéder à l'investissement
         investInProject(amount);
     }
 
-    // Dans InvestissementDetailActivity.java
 
     private void investInProject(double amount) {
 

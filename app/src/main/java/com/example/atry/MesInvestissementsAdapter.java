@@ -15,8 +15,8 @@ import java.util.List;
 
 public class MesInvestissementsAdapter extends RecyclerView.Adapter<MesInvestissementsAdapter.ViewHolder> {
 
-    private List<aInvestit> mesinvestissements;
-    private OnInvestmentActionListener listener;
+    private final List<aInvestit> mesinvestissements;
+    private final OnInvestmentActionListener listener;
 
     public MesInvestissementsAdapter(List<aInvestit> mesinvestissements, OnInvestmentActionListener listener) {
         this.mesinvestissements = mesinvestissements;

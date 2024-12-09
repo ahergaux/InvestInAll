@@ -13,7 +13,6 @@
         android:elevation="4dp"
         android:layout_margin="8dp">
 
-        <!-- Nom du projet -->
         <TextView
             android:id="@+id/detail_nom"
             android:layout_width="match_parent"
@@ -23,7 +22,6 @@
             android:textStyle="bold"
             android:paddingBottom="16dp" />
 
-        <!-- Créateur du projet -->
         <TextView
             android:id="@+id/detail_createur"
             android:layout_width="match_parent"
@@ -32,7 +30,6 @@
             android:textSize="16sp"
             android:paddingBottom="8dp" />
 
-        <!-- Rendement -->
         <TextView
             android:id="@+id/detail_rendement_label"
             android:layout_width="match_parent"
@@ -41,7 +38,6 @@
             android:textSize="16sp" />
 
 
-        <!-- Date du prochain dividende -->
         <TextView
             android:id="@+id/detail_dividende_date"
             android:layout_width="match_parent"
@@ -50,7 +46,6 @@
             android:textSize="16sp"
             android:paddingBottom="8dp" />
 
-        <!-- Récurrence des dividendes -->
         <TextView
             android:id="@+id/detail_dividende_recurrence"
             android:layout_width="match_parent"
@@ -60,7 +55,6 @@
             android:paddingBottom="8dp" />
 
 
-        <!-- Solde actuel -->
         <TextView
             android:id="@+id/detail_solde"
             android:layout_width="match_parent"
@@ -86,7 +80,6 @@
             android:inputType="numberDecimal"
             android:layout_marginTop="16dp" />
 
-        <!-- Bouton pour investir -->
         <Button
             android:id="@+id/button_invest"
             android:layout_width="match_parent"

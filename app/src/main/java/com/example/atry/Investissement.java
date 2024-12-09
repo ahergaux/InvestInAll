@@ -75,10 +75,10 @@ public class Investissement {
                 compte.getId(),
                 compte.getPersonne().getNom(),
                 compte.getPersonne().getPrenom(),
-                getId(), // L'ID de l'investissement
+                getId(),
                 soldeInvestit
         );
-        nouvelInvest.setId(id); // Définir l'ID généré dans l'objet
+        nouvelInvest.setId(id);
         investisseurs.add(nouvelInvest);
         compte.getMesinvestissements().add(nouvelInvest);
         dbHelper.updateInvestissement(this.getId(), this.getFormattedNom(), this.getRendements(), this.getDividendeDate(), this.getDividendeRecurrence(), this.getButAAtteindre(), this.getSolde());
@@ -91,7 +91,7 @@ public class Investissement {
             if (element.getInvestisseur().equals(compte)) {
                 solde -= element.getSoldeInvestit();
                 investisseurs.remove(element);
-                dbHelper.deleteAInvestit(element.getId()); // Utiliser getId()
+                dbHelper.deleteAInvestit(element.getId());
                 break;
             }
         }

@@ -34,7 +34,6 @@
         android:text="Réduire"
         android:layout_marginTop="8dp" />
 
-    <!-- Bouton pour supprimer l'investissement -->
     <Button
         android:id="@+id/button_delete_investment"
         android:layout_width="wrap_content"

@@ -19,7 +19,7 @@ public class CreateAccountActivity extends AppCompatActivity {
     private EditText currencyInput;
     private Button createAccountButton;
     private DatabaseHelper dbHelper;
-    private long dateNaissance; // Variable pour stocker la date de naissance en format long
+    private long dateNaissance;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,12 +52,10 @@ public class CreateAccountActivity extends AppCompatActivity {
                 return;
             }
 
-            // Convertir la date de naissance en un format approprié (ex: timestamp)
             try {
-                // Supposons que la date est saisie au format "jj/mm/aaaa"
                 String[] dateParts = dateNaissanceStr.split("/");
                 int day = Integer.parseInt(dateParts[0]);
-                int month = Integer.parseInt(dateParts[1]) - 1; // Les mois commencent à 0
+                int month = Integer.parseInt(dateParts[1]) - 1;
                 int year = Integer.parseInt(dateParts[2]);
 
                 java.util.Calendar calendar = java.util.Calendar.getInstance();
@@ -68,12 +66,10 @@ public class CreateAccountActivity extends AppCompatActivity {
                 return;
             }
 
-            // Créer une nouvelle Personne et un nouveau Compte
             Personne personne = new Personne(nom, prenom, dateNaissance, nationalite);
             personne.setIban(iban);
             Compte compte = new Compte(CreateAccountActivity.this, personne, alias, currency);
 
-            // Insérer le nouveau compte dans la base de données
             long compteId = dbHelper.insertCompte(
                     compte.getAlias(),
                     compte.getSolde(),
@@ -86,11 +82,9 @@ public class CreateAccountActivity extends AppCompatActivity {
             );
             compte.setId(compteId);
 
-            // Initialiser le CompteManager avec le nouveau compte
             CompteManager.initCompte(CreateAccountActivity.this, compte.getPersonne(), compte.getAlias(), compte.getCurrency());
             CompteManager.getCompte().setId(compteId);
 
-            // Rediriger vers MainActivity
             Intent intent = new Intent(CreateAccountActivity.this, MainActivity.class);
             startActivity(intent);
             finish();

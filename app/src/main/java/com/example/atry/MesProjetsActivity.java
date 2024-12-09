@@ -25,13 +25,10 @@ public class MesProjetsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mes_projets);
 
-        // Récupérer le compte global
         Compte compte = CompteManager.getCompte();
 
-        // Récupérer les projets du compte
         List<Investissement> mesProjets = compte.getMesProjets();
 
-        // Configurer le RecyclerView
         RecyclerView recyclerView = findViewById(R.id.recycler_view_mes_projets);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
@@ -41,7 +38,6 @@ public class MesProjetsActivity extends AppCompatActivity {
         });
         recyclerView.setAdapter(adapter);
 
-        // Configurer le bouton Ajouter un Projet
         Button addProjectButton = findViewById(R.id.add_project_button);
         addProjectButton.setOnClickListener(v -> showAddProjectDialog(compte, mesProjets));
     }
@@ -68,7 +64,6 @@ public class MesProjetsActivity extends AppCompatActivity {
             String dividendDateStr = projectDividendDateInput.getText().toString().trim();
             String dividendRecurrenceStr = projectDividendRecurrenceInput.getText().toString().trim();
 
-            // Valider les champs
             if (name.isEmpty() || goalStr.isEmpty() || rendementStr.isEmpty() ||
                     dividendDateStr.isEmpty() || dividendRecurrenceStr.isEmpty()) {
                 Toast.makeText(this, "Veuillez remplir tous les champs", Toast.LENGTH_SHORT).show();
@@ -80,7 +75,6 @@ public class MesProjetsActivity extends AppCompatActivity {
             int dividendDate = Integer.parseInt(dividendDateStr);
             int dividendRecurrence = Integer.parseInt(dividendRecurrenceStr);
 
-            // Dans showAddProjectDialog
             Investissement newProject = new Investissement(this,
                     compte.getAlias(),
                     name,

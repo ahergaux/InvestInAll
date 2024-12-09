@@ -12,7 +12,6 @@
         android:textStyle="bold"
         android:paddingBottom="16dp" />
 
-    <!-- Bouton pour ajouter un projet -->
     <Button
         android:id="@+id/add_project_button"
         android:layout_width="wrap_content"
@@ -20,7 +19,6 @@
         android:text="Ajouter un Projet"
         android:layout_marginBottom="16dp" />
 
-    <!-- RecyclerView pour afficher les projets -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_view_mes_projets"
         android:layout_width="match_parent"

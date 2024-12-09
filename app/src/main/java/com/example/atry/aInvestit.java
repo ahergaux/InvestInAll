@@ -3,8 +3,8 @@ package com.example.atry;
 public class aInvestit {
 
     private long id;
-    private Compte investisseur;
-    private Investissement investissement;
+    private final Compte investisseur;
+    private final Investissement investissement;
     private double soldeInvestit;
 
     public aInvestit(Compte investisseur, Investissement newInvestissement, double investit) {
@@ -13,7 +13,6 @@ public class aInvestit {
         this.soldeInvestit = investit;
     }
 
-    // Getter et Setter pour id
     public long getId() {
         return id;
     }

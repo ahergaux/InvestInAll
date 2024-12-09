@@ -7,7 +7,6 @@
     android:layout_margin="14dp"
     android:background="@drawable/block_background">
 
-    <!-- Titre du projet -->
     <TextView
         android:id="@+id/block_title"
         android:layout_width="wrap_content"
@@ -25,7 +24,6 @@
         android:layout_margin="6dp"
         android:gravity="center_vertical"
         android:orientation="horizontal">
-    <!-- Créateur du projet -->
     <TextView
         android:id="@+id/block_creator"
         android:layout_width="wrap_content"
@@ -37,7 +35,6 @@
         android:textStyle="italic"
         android:layout_marginStart="15dp" />
 
-    <!-- Montant collecté -->
     <TextView
         android:id="@+id/block_amount"
         android:layout_width="0dp"
@@ -50,7 +47,6 @@
 
 
     </LinearLayout>
-        <!-- Barre de progression -->
     <ProgressBar
         android:id="@+id/block_progessbar"
         style="?android:attr/progressBarStyleHorizontal"
